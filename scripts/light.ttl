@@ -7,7 +7,7 @@
 <>
   a td:Thing, eve:Artifact, iot:Light, iot:BinarySwitch ;
   td:name "Lamp"^^xsd:string ;
-  td:base "http://192.168.0.101/"^^xsd:anyURI ;
+  td:base "https://reqres.in/"^^xsd:anyURI ;
   td:interaction [
     a td:Action, iot:SwitchOn ;
     td:name "Switch On"^^xsd:string ;

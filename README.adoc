@@ -17,7 +17,7 @@ A platform for _hypermedia multi-agent systems (MAS)_ (see [1]) built with https
 
 == Building the project
 
-To build the project, just use:
+To build the project, just run the default gradle task:
 
 ----
 ./gradlew
@@ -30,9 +30,8 @@ The default Gradle task `shadowJar` generates a _fat-jar_ in the `build/libs` di
 
 To start an Yggdrasil node:
 
-[source]
 ----
-java -jar build/libs/yggdrasill-0.0-SNAPSHOT-fat.jar -conf src/main/conf/config1.json
+java -jar build/libs/emas2018-yggdrasil-0.0-SNAPSHOT-fat.jar -conf src/main/conf/config1.json
 ----
 
 The configuration file is optional. Open your browser to http://localhost:8080. You should see an `Yggdrasil v0.0` message.
@@ -52,7 +51,6 @@ The HTTP API implements CRUD operations for 3 types of resources:
 
 When creating a resource via `POST`, the resource to be created is identified in the Turtle payload via a null relative IRI:
 
-[source]
 ----
 curl -i -X POST \
   http://localhost:8080/environments/ \
@@ -64,7 +62,6 @@ curl -i -X POST \
 
 When retrieving the representation of a resource from Yggdrasil, the HTTP response contains 2 `Link` headers that clients can use to subscribe for receiving notifications whenever the resource is updated (see the https://www.w3.org/TR/2018/REC-websub-20180123/[W3C WebSub recommendation]). Sample request:
 
-[source]
 ----
 GET /workspaces/wksp1 HTTP/1.1
 Host: yggdrasill.andreiciortea.ro
